@@ -1,24 +1,31 @@
-class Negociacoes{
+class Negociacoes {
     
-    constructor(armadilha){
+    constructor() {
+
         this._negociacoes = [];
         Object.freeze(this);
     }
-    
-    adiciona(negociacao){
+
+
+    adiciona(negociacao) {
+
         this._negociacoes.push(negociacao);
     }
-    
-    paraArray(){
+
+    paraArray() {
+
         return [].concat(this._negociacoes);
     }
-    
-    get volumeTotal(){
-        return this._negociacoes.
-            reduce((total,negociacao)=> total + negociacao.volume,0);
+
+    get volumeTotal() {
+
+        return this._negociacoes.reduce(
+            (total, negociacao) => total + negociacao.volume, 0
+        );
     }
 
-    esvazia(){
+    esvazia() {
+
         this._negociacoes.length = 0;
     }
 }
